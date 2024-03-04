@@ -42,7 +42,7 @@ a:hover {
   text-decoration: underline;
 }
 
-.price-card {
+.price-card, .about {
   margin: 20px;
   display: flex;
   flex-direction: column;
@@ -56,6 +56,10 @@ a:hover {
   letter-spacing: 2px;
   font-size: smaller;
   padding-left: 5px;
+}
+
+.price-card {
+  padding-top: 0;
 }
 
 .price-card > * {
@@ -76,32 +80,32 @@ a:hover {
   padding-right: 10px;
 }
 
-.header, .footer {
+.price-header, .price-footer {
   position: relative;
 }
 
-.header > span, .footer > a {
+.price-header > span, .price-footer > a {
   display: block;
   text-align: center;
 }
 
-.header > span {
+.price-header > span {
   font-size: 24px;
   font-weight: 500;
 }
 
-.footer > a {
+.price-footer > a {
   font-size: 14px;
 }
 
-.header > svg, .footer > svg {
+.price-header > svg, .price-footer > svg {
   display: flex;
   position: absolute;
   top: 0;
   height: 100%;
 }
 
-.header > svg {
+.price-header > svg {
   right: 20px;
 }
 
@@ -128,4 +132,100 @@ a:hover {
   margin: 10px 0;
   width: 100%;
   background-color: #CCCCCC;
+}
+
+.about .title {
+  font-family: 'Cormorant Garamond', 'Times New Roman', Times, serif;
+  font-size: 120px;
+}
+
+.about > .header {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  padding-right: 200px;
+  height: 400px;
+}
+
+.about img {
+  height: 300px;
+  object-fit: contain;
+  position: absolute;
+  right: 0;
+  top: 80px;
+  z-index: -1;
+}
+
+@media screen and (max-width: 450px) {
+  .about .title {
+    font-size: 80px;
+  }
+
+  .about img {
+    top: 40px;
+  }
+}
+
+.description {
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.description a {
+  text-decoration: underline;
+}
+
+.links {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+.event {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 16px;
+  overflow: hidden;
+  background-color: #665544;
+  color: #E0DFD9;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 0 10px 10px 0;
+  font-weight: 500;
+}
+
+#event::before {
+  content: 'Event: ';
+}
+
+#event {
+  background-color: inherit;
+  color: inherit;
+  padding-right: 5px;
+}
+
+.tab {
+  display: contents;
+}
+
+.event:not(.closed) svg {
+  transform: scaleX(-1);
+}
+
+.event.closed {
+  right: calc(100vw - 40px);
+}
+
+.event.closed #event {
+  display: none;
+}
+
+.event.has-event {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
