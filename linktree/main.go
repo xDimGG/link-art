@@ -60,8 +60,7 @@ func scrape() {
 }
 
 func getRoot(w http.ResponseWriter, r *http.Request) {
-	// todo: restrict this once there's an actual domain
-	w.Header().Add("Access-Control-Allow-Origin", "*")
+	w.Header().Add("Access-Control-Allow-Origin", "link-art.com")
 	w.Header().Add("Cross-Origin-Resource-Policy", "cross-origin")
 	w.Header().Add("Content-Type", "application/json")
 	w.Header().Add("Content-Length", strconv.Itoa(len(scraped)))
