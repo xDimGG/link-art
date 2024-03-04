@@ -250,15 +250,13 @@ a:hover {
 }
 
 .gallery .title {
-	width: 600px;
-	max-width: 600px;
-	margin: 0 auto;
+	font-size: 60px;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 700px) {
 	.gallery {
-		width: 800px;
-		max-width: none;
+		width: 100%;
+		max-width: 1000px;
 	}
 
 	.photos {
