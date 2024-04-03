@@ -26,6 +26,7 @@
 		<a href="#events">Events</a>
 		<a href="#faq">FAQ</a>
 		<a href="#policy">Policy</a>
+		<a href="#contact">Contact Us</a>
 		<a href="#about-us">About Us</a>
 	</div>
 	<div class="gallery section" id="pictures">
@@ -142,6 +143,26 @@
 		</ul>
 		<span>THANK YOU FOR YOUR UNDERSTANDING</span>
 	</div>
+	<div class="contact section" id="contact">
+		<div class="title">Contact Us</div>
+		<span class="description">If you'd like to book an event or get any information about the process, please send us an email using the form below.</span>
+		<form action="https://api.web3forms.com/submit" method="POST">
+				<!-- Replace with your Access Key -->
+				<input type="hidden" name="access_key" value="53a97bf6-0d28-4d6e-afd5-8e36b0306a31">
+				<input type="hidden" name="redirect" value="https://web3forms.com/success?title=Email%20sent!&desc=Your%20email%20has%20been%20received%20and%20we%20will%20get%20back%20to%20you%20promptly" />
+
+				<!-- Form Inputs. Each input must have a name="" attribute -->
+				<input type="text" name="name" class="field" required placeholder="Name">
+				<br>
+				<input type="email" name="email" class="field" required placeholder="Email address">
+				<br>
+				<input type="tel" name="phone" class="field" required placeholder="Phone number">
+				<br>
+				<textarea name="message" class="field" placeholder="Your message here..." required></textarea>
+
+				<button type="submit" class="field button">Send Email</button>
+		</form>
+	</div>
 	<div class="about section" id="about-us">
 		<div class="header">
 			<span class="title">ABOUT US</span>
@@ -164,6 +185,7 @@
 			<a href="https://www.youtube.com/@LinkArtPJ" target="_blank" title="YouTube Channel"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg></a>
 		</div>
 	</div>
+	<script src="https://web3forms.com/client/script.js" async defer></script>
 	<script src="script.js"></script>
 </body>
 </html>

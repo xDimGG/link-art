@@ -26,7 +26,7 @@ img {
 }
 
 /* Global styles */
-body, a {
+body, a, .field {
 	font-family: Roboto, Arial, sans-serif;
 	color: #665544;
 	text-decoration: none;
@@ -187,9 +187,37 @@ a:hover {
 	gap: 20px;
 }
 
-.gallery > .title, .events > .title, .faq > .title, .policy > .title {
+.gallery > .title, .events > .title, .faq > .title, .policy > .title, .contact > .title {
 	font-size: 60px;
 	padding-bottom: 20px;
+}
+
+.contact > .title {
+	padding-bottom: 0;
+}
+
+.contact > .description {
+	padding-bottom: 20px;
+	font-weight: 400;
+}
+
+.contact .button {
+	width: inherit;
+	font-size: 20px;
+	margin: 0 auto;
+	display: block;
+	padding: 8px 20px;
+	cursor: pointer;
+	background-color: #EEE;
+}
+
+.contact .button:hover {
+	background-color: #FFF;
+}
+
+textarea.field {
+	height: 100px;
+	margin: 12px 0;
 }
 
 #navigation {
@@ -218,11 +246,20 @@ a:hover {
 
 .hamburger {
 	position: fixed;
-	top: 5px;
-	left: 5px;
+	top: 9px;
+	left: 9px;
 	color: #665544;
 	z-index: 999;
 	cursor: pointer;
+}
+
+.field {
+	margin: 5px 0;
+	width: 100%;
+	padding: 6px;
+	border: none;
+	border-radius: 5px;
+	resize: none;
 }
 
 .hamburger:not(.closed) > svg:last-child {
