@@ -171,7 +171,7 @@ a:hover {
 }
 
 .description {
-	font-weight: 500;
+	font-weight: 400;
 	line-height: 1.4;
 }
 
@@ -361,4 +361,60 @@ textarea.field {
 
 .flipped {
 	transform: rotate(180deg);
+}
+
+.pswp__bullets-indicator {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.pswp__bullet {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fff;
+  margin: 0 5px;
+}
+.pswp__bullet--active { 
+  background: #a97847;
+}
+
+.pswp-gallery {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.pswp-gallery img {
+	width: min(25vw, 300px);
+}
+
+.more-photos {
+	position: relative;
+}
+
+.more-photos::after {
+	content: '+11';
+	position: absolute;
+	font-size: 3rem;
+	color: white;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	background: rgba(0, 0, 0, 0.6);
+	opacity: 0.9;
+}
+
+.pswp-gallery a {
+	font-size: 0;
 }

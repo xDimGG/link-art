@@ -37,3 +37,46 @@ document.addEventListener('DOMContentLoaded', async () => {
 		`;
 	}
 });
+
+// Include Lightbox 
+import PhotoSwipeLightbox from './dist/photoswipe-lightbox.esm.js';
+import PhotoSwipe from './dist/photoswipe.esm.js';
+
+const options = {
+  gallery: '#gallery--getting-started',
+  children: 'a',
+  pswpModule: PhotoSwipe,
+};
+
+const lightbox = new PhotoSwipeLightbox(options);
+lightbox.on('uiRegister', () => {
+  lightbox.pswp.ui.registerElement({
+    name: 'bulletsIndicator',
+    className: 'pswp__bullets-indicator',
+    appendTo: 'wrapper',
+    onInit: (el, pswp) => {
+      const bullets = [];
+      let bullet;
+      let prevIndex = -1;
+
+      for (let i = 0; i < pswp.getNumItems(); i++) {
+        bullet = document.createElement('div');
+        bullet.className = 'pswp__bullet';
+        bullet.onclick = (e) => {
+          pswp.goTo(bullets.indexOf(e.target));
+        };
+        el.appendChild(bullet);
+        bullets.push(bullet);
+      }
+
+      pswp.on('change', (a,) => {
+        if (prevIndex >= 0) {
+          bullets[prevIndex].classList.remove('pswp__bullet--active');
+        }
+        bullets[pswp.currIndex].classList.add('pswp__bullet--active');
+        prevIndex = pswp.currIndex;
+      });
+    }
+  });
+});
+lightbox.init();
